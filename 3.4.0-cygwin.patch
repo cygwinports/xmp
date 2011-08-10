@@ -1,0 +1,22 @@
+--- origsrc/xmp-3.4.0/configure	2011-08-08 08:01:51.000000000 -0500
++++ src/xmp-3.4.0/configure	2011-08-10 00:17:07.414451000 -0500
+@@ -2296,7 +2296,7 @@ powerpc64)
+ esac
+ 
+ case ${target_os} in
+-cygwin*|mingw*)
++mingw*)
+     case ${target_os} in
+     mingw*)
+ 	CFLAGS="${CFLAGS} -Isrc/win32"
+--- origsrc/xmp-3.4.0/configure.in	2011-08-08 08:01:47.000000000 -0500
++++ src/xmp-3.4.0/configure.in	2011-08-10 00:15:11.915784500 -0500
+@@ -126,7 +126,7 @@ powerpc64)
+ esac
+ 
+ case ${target_os} in
+-cygwin*|mingw*)
++mingw*)
+     case ${target_os} in
+     mingw*)
+ 	CFLAGS="${CFLAGS} -Isrc/win32"

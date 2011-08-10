@@ -1,0 +1,6 @@
+category: Audio
+requires: libaudio2
+sdesc: "Command-line module format player"
+ldesc: "The Extended Module Player, or xmp, is a portable cross-platform 
+command-line module player. Xmp plays over 90 mainstream and obscure 
+module formats from Amiga, Atari, Acorn, Apple IIgs and PC."

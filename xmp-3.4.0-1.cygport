@@ -1,0 +1,23 @@
+DESCRIPTION="Extended Module Player with Audacious plugin"
+HOMEPAGE="http://xmp.sourceforge.net/"
+SRC_URI="mirror://sourceforge/xmp/${P}.tar.gz"
+PATCH_URI="3.4.0-cygwin.patch"
+
+PKG_NAMES="xmp audacious-xmp"
+xmp_CONTENTS="etc/ usr/bin/ usr/share/"
+audacious_xmp_CONTENTS="usr/lib/audacious/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf --enable-nas --enable-audacious-plugin
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	make_etc_defaults /etc/xmp
+	mv ${D}/usr/lib/audacious/Input/xmp-audacious3.{so,dll}
+}
+DOCS="docs/COPYING docs/CREDITS docs/ChangeLog"
