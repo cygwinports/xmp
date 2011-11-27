@@ -10,7 +10,7 @@ audacious_xmp_CONTENTS="usr/lib/audacious/"
 src_compile() {
 	lndirs
 	cd ${B}
-	cygconf --enable-nas --enable-audacious-plugin
+	cygconf --enable-esd --enable-nas --enable-audacious-plugin
 	cygmake
 }
 

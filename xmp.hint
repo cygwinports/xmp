@@ -1,5 +1,5 @@
 category: Audio
-requires: libaudio2
+requires: libaudio2 libesd0
 sdesc: "Command-line module format player"
 ldesc: "The Extended Module Player, or xmp, is a portable cross-platform 
 command-line module player. Xmp plays over 90 mainstream and obscure 
