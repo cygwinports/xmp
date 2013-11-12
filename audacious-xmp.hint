@@ -1,7 +1,0 @@
-category: Audio
-requires: audacious libgcc1 libglib2.0_0
-external-source: xmp
-sdesc: "Audacious module format input plugin"
-ldesc: "The Extended Module Player, or xmp, is a portable cross-platform 
-command-line module player. Xmp plays over 90 mainstream and obscure 
-module formats from Amiga, Atari, Acorn, Apple IIgs and PC."
