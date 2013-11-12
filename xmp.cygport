@@ -1,6 +1,6 @@
 NAME="xmp"
-VERSION=3.4.1
-RELEASE=2
+VERSION=4.0.6
+RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line module format player"
 DESCRIPTION="The Extended Module Player, or xmp, is a portable cross-platform
@@ -8,17 +8,12 @@ command-line module player. Xmp plays over 90 mainstream and obscure module
 formats from Amiga, Atari, Acorn, Apple IIgs and PC."
 HOMEPAGE="http://xmp.sourceforge.net/"
 SRC_URI="mirror://sourceforge/xmp/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="3.4.0-cygwin.patch"
-
-PKG_NAMES="xmp audacious-xmp"
-xmp_CONTENTS="etc/ usr/bin/ usr/share/"
-audacious_xmp_SUMMARY="Module format plugin for Audacious Media Player"
-audacious_xmp_CONTENTS="usr/lib/audacious/"
+PATCH_URI="4.0.6-win64.patch"
 
 src_compile() {
 	lndirs
 	cd ${B}
-	cygconf --enable-esd --enable-nas --enable-audacious-plugin
+	cygconf --disable-alsa --enable-pulseaudio
 	cygmake
 }
 
@@ -26,6 +21,4 @@ src_install() {
 	cd ${B}
 	cyginstall
 	make_etc_defaults /etc/xmp
-	mv ${D}/usr/lib/audacious/Input/xmp-audacious3.{so,dll}
 }
-DOCS="docs/COPYING docs/CREDITS docs/ChangeLog"
