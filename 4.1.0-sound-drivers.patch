@@ -1,0 +1,24 @@
+Make pulseaudio the default
+
+--- origsrc/xmp-4.1.0/src/sound.c	2016-07-16 06:29:44.210738800 -0500
++++ src/xmp-4.1.0/src/sound.c	2016-08-08 17:34:30.244447200 -0500
+@@ -70,9 +70,6 @@ void init_sound_drivers(void)
+ #ifdef SOUND_COREAUDIO
+ 	register_sound_driver(&sound_coreaudio);
+ #endif
+-#ifdef SOUND_WIN32
+-	register_sound_driver(&sound_win32);
+-#endif
+ #ifdef SOUND_PULSEAUDIO
+ 	register_sound_driver(&sound_pulseaudio);
+ #endif
+@@ -85,6 +82,9 @@ void init_sound_drivers(void)
+ #ifdef SOUND_OSS
+ 	register_sound_driver(&sound_oss);
+ #endif
++#ifdef SOUND_WIN32
++	register_sound_driver(&sound_win32);
++#endif
+ #ifdef SOUND_QNX
+ 	register_sound_driver(&sound_qnx);
+ #endif

@@ -1,0 +1,11 @@
+--- origsrc/xmp-4.1.0/src/read_config.c	2016-07-16 06:29:44.210738800 -0500
++++ src/xmp-4.1.0/src/read_config.c	2016-08-08 17:43:58.603175200 -0500
+@@ -72,7 +72,7 @@ int read_config(struct options *o)
+ 	snprintf(myrc, PATH_MAX, "%s/.xmp/xmp.conf", home);
+ 
+ 	if ((rc = fopen(myrc, "r")) == NULL) {
+-		strncpy(myrc, SYSCONFDIR "/xmp.conf", PATH_MAX);
++		strncpy(myrc, SYSCONFDIR "/xmp/xmp.conf", PATH_MAX);
+ 		if ((rc = fopen(myrc, "r")) == NULL) {
+ 			return -1;
+ 		}

@@ -1,5 +1,5 @@
 NAME="xmp"
-VERSION=4.0.6
+VERSION=4.1.0
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="Command-line module format player"
@@ -8,7 +8,10 @@ command-line module player. Xmp plays over 90 mainstream and obscure module
 formats from Amiga, Atari, Acorn, Apple IIgs and PC."
 HOMEPAGE="http://xmp.sourceforge.net/"
 SRC_URI="mirror://sourceforge/xmp/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="4.0.6-win64.patch"
+PATCH_URI="
+	4.1.0-sysconfdir.patch
+	4.1.0-sound-drivers.patch
+"
 
 src_compile() {
 	lndirs
